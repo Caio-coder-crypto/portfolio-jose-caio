@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, MessageCircle } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Code2, Database, Zap } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -21,24 +21,28 @@ export default function Home() {
       {/* Navbar */}
       <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <div className="text-2xl font-bold text-primary">Caio Oliveira</div>
+          <div className="text-2xl font-bold">
+            <span className="text-primary">&lt;</span>
+            <span>Caio</span>
+            <span className="text-primary">/&gt;</span>
+          </div>
           <div className="hidden md:flex gap-8">
-            <a href="#hero" className="hover:text-primary transition-colors">
+            <a href="#hero" className="hover:text-primary transition-colors text-sm">
               Início
             </a>
-            <a href="#pain-points" className="hover:text-primary transition-colors">
-              Desafios
+            <a href="#philosophy" className="hover:text-primary transition-colors text-sm">
+              Filosofia
             </a>
-            <a href="#about" className="hover:text-primary transition-colors">
-              Sobre
+            <a href="#stack" className="hover:text-primary transition-colors text-sm">
+              Stack
             </a>
-            <a href="#methodology" className="hover:text-primary transition-colors">
-              Metodologia
+            <a href="#cases" className="hover:text-primary transition-colors text-sm">
+              Cases
             </a>
-            <a href="#projects" className="hover:text-primary transition-colors">
-              Projetos
+            <a href="#services" className="hover:text-primary transition-colors text-sm">
+              Serviços
             </a>
-            <a href="#contact" className="hover:text-primary transition-colors">
+            <a href="#contact" className="hover:text-primary transition-colors text-sm">
               Contato
             </a>
           </div>
@@ -48,179 +52,107 @@ export default function Home() {
       {/* Hero Section */}
       <section
         id="hero"
-        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-secondary/10 overflow-hidden"
+        className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden"
       >
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 right-20 w-72 h-72 bg-primary rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute top-20 right-20 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
         </div>
 
         <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
           <div className="animate-slide-in-up">
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
-              Sua operação de vendas,{" "}
-              <span className="text-primary">100% automatizada</span> no Kommo.
-            </h1>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Eu desenho e implemento automações de CRM que eliminam tarefas manuais, evitam
-              bloqueios e transformam seus leads em clientes recorrentes.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <Button className="btn-primary w-full sm:w-auto">
-                  <MessageCircle className="mr-2 h-5 w-5" />
-                  Falar com Especialista via WhatsApp
-                </Button>
-              </a>
+            <div className="mb-6 inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
+              <span className="text-primary text-sm font-mono">Engenheiro de Soluções</span>
             </div>
+            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
+              Engenharia de <span className="text-primary">CRM</span> e Inteligência de Dados.
+            </h1>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
+              Arquitetura de ecossistemas de vendas escaláveis via código. Transformo processos manuais em automações auditáveis, integrando CRMs com APIs proprietárias.
+            </p>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
+              <Button className="btn-primary">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Agendar Diagnóstico Técnico
+              </Button>
+            </a>
           </div>
 
           <div className="animate-slide-in-down hidden md:flex justify-center">
-            <img
-              src="/IMG_7301(1).jpg"
-              alt="Caio Oliveira"
-              className="rounded-2xl shadow-2xl max-w-md w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
-
-      {/* Pain Points Section */}
-      <section id="pain-points" className="py-20 bg-secondary/5">
-        <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-4">Seu negócio sofre com isso?</h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Se você marcou "sim" para qualquer um desses, você não precisa de mais planilhas.
-            Você precisa de um processo.
-          </p>
-
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            {[
-              "Falta de previsão de vendas.",
-              "Medo de fazer disparos em massa e ser bloqueado.",
-              "Não saber quais canais de aquisição trazem mais retorno.",
-              "Leads duplicados e processos manuais que tomam tempo.",
-            ].map((pain, idx) => (
-              <Card
-                key={idx}
-                className="p-6 border-2 border-border hover:border-primary/50 transition-colors animate-slide-in-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-1">
-                    <div className="w-2 h-2 rounded-full bg-primary"></div>
-                  </div>
-                  <p className="text-foreground font-medium">{pain}</p>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* About Section */}
-      <section id="about" className="py-20 bg-background">
-        <div className="container">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in-up">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-2xl opacity-20"></div>
               <img
-                src="/IMG_6691.jpg"
-                alt="Caio em ação"
-                className="rounded-2xl shadow-2xl w-full object-cover"
+                src="/IMG_7301(1).jpg"
+                alt="Caio Oliveira"
+                className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover border border-primary/20"
               />
             </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="animate-slide-in-up">
-              <h2 className="text-4xl font-bold mb-6">Prazer, sou Caio Oliveira</h2>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-                Sou Especialista em Automação e Processos de Vendas focado no Kommo CRM. Minha
-                missão é traduzir a complexidade técnica (Python, JS, Webhooks) em resultados
-                claros para sua empresa.
-              </p>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Como Gestor de mais de 15 operações ativas, eu não apenas "configuro o CRM",
-                mas desenho a arquitetura completa para que sua equipe venda mais, com menos
-                esforço manual. Sou graduando em Análise e Desenvolvimento de Sistemas e
-                desenvolvedor de soluções de automação avançada.
-              </p>
+      {/* Philosophy Section */}
+      <section id="philosophy" className="py-20 bg-secondary/10 border-y border-border">
+        <div className="container">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl font-bold mb-6">
+              <span className="text-primary">Liberdade Cognitiva</span> através da Automação.
+            </h2>
+            <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              Sou Caio Oliveira, especialista em automação e estudante de Análise e Desenvolvimento de Sistemas. Minha filosofia é que a tecnologia deve servir para liberar o potencial humano.
+            </p>
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              Desenvolvo middlewares e scripts personalizados (Google Apps Script/Python) que eliminam o "trabalho robótico" de equipes comerciais. Atuo na intersecção entre Vendas, Lógica de Programação e Business Intelligence, garantindo integridade de dados para tomada de decisão estratégica.
+            </p>
 
-              <div className="grid grid-cols-2 gap-4">
-                {[
-                  { label: "+2 Anos", desc: "de Experiência" },
-                  { label: "+15", desc: "Operações Ativas" },
-                  { label: "Especialista", desc: "Kommo & GAS" },
-                  { label: "Desenvolvedor", desc: "Java, Python, JS" },
-                ].map((item, idx) => (
-                  <Card
-                    key={idx}
-                    className="p-6 border border-border hover:border-primary/50 transition-colors"
-                  >
-                    <div className="text-2xl font-bold text-primary mb-2">{item.label}</div>
-                    <div className="text-sm text-muted-foreground">{item.desc}</div>
-                  </Card>
-                ))}
-              </div>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { icon: Code2, label: "Código", desc: "Python, GAS, JavaScript" },
+                { icon: Database, label: "Dados", desc: "Integridade & Auditoria" },
+                { icon: Zap, label: "Automação", desc: "Escalável & Segura" },
+              ].map((item, idx) => (
+                <Card key={idx} className="p-6 border border-primary/20 bg-primary/5">
+                  <item.icon className="h-8 w-8 text-primary mb-3" />
+                  <h3 className="font-bold mb-2">{item.label}</h3>
+                  <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Methodology Section */}
-      <section id="methodology" className="py-20 bg-secondary/5">
+      {/* Stack Tecnológico */}
+      <section id="stack" className="py-20 bg-background">
         <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-4">
-            O plano de 6 meses para sua Máquina de Vendas
-          </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Uma jornada completa de transformação, da organização até a escala segura.
-          </p>
+          <h2 className="text-4xl font-bold text-center mb-12">Stack Tecnológico</h2>
 
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
               {
-                title: "Mês 1-2: Fundação",
-                items: [
-                  "Diagnóstico e Mapeamento",
-                  "Estruturação de Funil",
-                  "Importação da Base",
-                  "Automações Iniciais",
-                ],
+                title: "Linguagens",
+                items: ["Python", "JavaScript (ES6+)", "Google Apps Script", "SQL"],
               },
               {
-                title: "Mês 3-4: Escala Segura",
-                items: [
-                  "Sistema Anti-bloqueio",
-                  "Automações Avançadas",
-                  "Reativação de Clientes",
-                  "Otimização de Performance",
-                ],
+                title: "Infraestrutura & Low-Code",
+                items: ["Make (Integromat)", "n8n", "Webhooks", "APIs REST"],
               },
               {
-                title: "Mês 5-6: Otimização",
-                items: [
-                  "Suporte Técnico 24/7",
-                  "Monitoramento Contínuo",
-                  "Novas Campanhas",
-                  "Escalabilidade",
-                ],
+                title: "Dados & BI",
+                items: ["Looker Studio", "JSON Parsing", "Data Warehousing", "Sheets"],
               },
-            ].map((phase, idx) => (
+            ].map((category, idx) => (
               <Card
                 key={idx}
-                className="p-8 border-2 border-border hover:border-primary transition-colors animate-slide-in-up"
-                style={{ animationDelay: `${idx * 0.15}s` }}
+                className="p-8 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold">
-                    {idx + 1}
-                  </div>
-                  <h3 className="text-xl font-bold">{phase.title}</h3>
-                </div>
+                <h3 className="text-xl font-bold mb-6 text-primary">{category.title}</h3>
                 <ul className="space-y-3">
-                  {phase.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                      <span className="text-primary font-bold mt-1">✓</span>
-                      <span>{item}</span>
+                  {category.items.map((item, i) => (
+                    <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                      <span className="text-accent">▸</span>
+                      <span className="font-mono text-sm">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -230,68 +162,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-20 bg-background">
+      {/* Cases Section */}
+      <section id="cases" className="py-20 bg-secondary/10 border-y border-border">
         <div className="container">
-          <h2 className="text-4xl font-bold text-center mb-4">Automações na Prática (Cases)</h2>
+          <h2 className="text-4xl font-bold text-center mb-4">Soluções de Engenharia</h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Veja como transformei operações reais em máquinas de vendas eficientes.
+            Casos reais de automação complexa que transformaram operações comerciais.
           </p>
 
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {[
               {
-                title: "Reestruturação e Automação Pós-Venda (Larosy)",
+                title: "Orquestrador de Agendas Inteligente",
+                tech: "Google Apps Script",
                 problem:
-                  "A operação do cliente no Kommo estava bagunçada, com leads duplicados e automações quebradas, gerando retrabalho e perda de vendas.",
+                  "Falta de sincronia entre status do CRM e agenda gerava 'no-show' e conflitos de horário.",
                 solution:
-                  "Reestruturei toda a base de leads e criei uma automação que, na 'Venda Ganha', captura os dados do lead, envia para Google Sheets e move o lead para a 'Carteira' sem criar duplicatas.",
-                tech: ["Kommo", "Make/Integromat", "Google Sheets", "Webhooks"],
+                  "Sistema backend que escuta webhooks, trata fusos horários (UTC-3) e renderiza eventos no Google Calendar com cores dinâmicas baseadas nas Tags do lead (ex: VIP = Dourado, Frio = Azul), permitindo gestão visual imediata.",
               },
               {
-                title: "Sistema de Disparo em Massa Anti-Bloqueio",
-                problem:
-                  "Clientes com grandes volumes de disparos no WhatsApp (ex: +1.000/dia) estavam sendo bloqueados, parando a operação comercial.",
+                title: "Gerador de Propostas Server-Side",
+                tech: "Document Automation",
+                problem: "Vendedores perdiam 20min calculando impostos e formatando PDFs.",
                 solution:
-                  "Desenvolvi um sistema de 'Disparo Cadenciado' que usa um balanceador (Round Robin) para distribuir os disparos entre múltiplos números e uma lógica de 'Expediente' que pausa as automações fora do horário comercial.",
-                tech: ["Kommo", "Salesbot", "Round Robin", "Controle de Horário"],
+                  "Automação via API que intercepta o lead, extrai variáveis complexas (dimensões, material), executa cálculo financeiro via script e renderiza um contrato em PDF instantaneamente. Link injetado no CRM em < 3 segundos.",
               },
               {
-                title: "Normalização de Dados com Google Apps Script",
-                problem:
-                  "Bases de leads exportadas com milhares de linhas, informações de sócios em colunas diferentes e dados duplicados, impossibilitando a análise.",
+                title: "Auditoria Financeira com Trava de Concorrência",
+                tech: "LockService & Mutex",
+                problem: "Cliques simultâneos de vendedores geravam duplicidade no financeiro.",
                 solution:
-                  "Criei um script em Google Apps Script que unifica leads usando o CNPJ como chave única, agrupa sócios em linhas separadas e deduplica informações.",
-                tech: ["Google Apps Script", "JavaScript", "Google Sheets"],
+                  "Algoritmo de fila utilizando LockService (Mutex). O sistema valida timestamps e IDs antes da gravação, impedindo duplicidade na raiz e garantindo integridade do BI.",
+              },
+              {
+                title: "Bot SDR com Processamento de Linguagem Natural",
+                tech: "NLP Básico",
+                problem: "Triagem manual de agendamentos no WhatsApp consumia tempo de vendedores.",
+                solution:
+                  "Robô que monitora o chat (Incoming messages). Utilizando String Matching, detecta intenção do cliente (ex: 'agendado', 'confirmar') e move o card automaticamente para a etapa correta do funil.",
+              },
+              {
+                title: "Business Intelligence & Detecção de Gargalos",
+                tech: "Data Warehouse",
+                problem: "Gestão sem visibilidade dos motivos de perda de leads.",
+                solution:
+                  "Data Warehouse em nuvem alimentado em tempo real. Dashboard no Looker Studio visualizando 'Aging' (tempo de estagnação) e taxas de conversão reais por vendedor.",
               },
             ].map((project, idx) => (
               <Card
                 key={idx}
-                className="p-8 border-2 border-border hover:border-primary/50 transition-colors animate-slide-in-up"
-                style={{ animationDelay: `${idx * 0.15}s` }}
+                className="p-8 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
+                style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <h3 className="text-2xl font-bold mb-4 text-primary">{project.title}</h3>
-
-                <div className="grid md:grid-cols-2 gap-6 mb-6">
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Problema</h4>
-                    <p className="text-muted-foreground">{project.problem}</p>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-foreground mb-2">Solução</h4>
-                    <p className="text-muted-foreground">{project.solution}</p>
-                  </div>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-primary flex-1">{project.title}</h3>
+                  <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full font-mono">
+                    {project.tech}
+                  </span>
                 </div>
 
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full font-medium"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
+                      O Desafio
+                    </h4>
+                    <p className="text-muted-foreground text-sm">{project.problem}</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
+                      A Engenharia
+                    </h4>
+                    <p className="text-muted-foreground text-sm">{project.solution}</p>
+                  </div>
                 </div>
               </Card>
             ))}
@@ -299,19 +241,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Services Section */}
+      <section id="services" className="py-20 bg-background">
+        <div className="container">
+          <h2 className="text-4xl font-bold text-center mb-12">O Que Eu Faço</h2>
+
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+            {[
+              {
+                title: "Arquitetura de CRM Multi-Plataforma",
+                desc: "Design de sistemas integrados que conectam CRMs, ERPs e plataformas de marketing.",
+              },
+              {
+                title: "Sanitização e Migração de Bases",
+                desc: "Deduplicação via script, normalização de dados e migração segura entre plataformas.",
+              },
+              {
+                title: "Integrações via API",
+                desc: "Conexões robustas entre ERP, CRM e Marketing com tratamento de erros e retry logic.",
+              },
+              {
+                title: "Dashboards de BI",
+                desc: "Visualizações em tempo real com previsibilidade de receita e detecção de gargalos.",
+              },
+            ].map((service, idx) => (
+              <Card
+                key={idx}
+                className="p-6 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
+                style={{ animationDelay: `${idx * 0.1}s` }}
+              >
+                <h3 className="text-lg font-bold mb-3 text-primary">{service.title}</h3>
+                <p className="text-muted-foreground text-sm">{service.desc}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-secondary/5">
+      <section id="contact" className="py-20 bg-secondary/10 border-y border-border">
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-4xl font-bold mb-4">Vamos otimizar sua operação?</h2>
+            <h2 className="text-4xl font-bold mb-4">Pronto para transformar sua operação?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Clique no botão abaixo para um diagnóstico gratuito do seu CRM. Sem compromisso.
+              Vamos conversar sobre sua arquitetura de vendas e como código pode liberar seu potencial.
             </p>
 
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button className="btn-primary mb-12">
                 <MessageCircle className="mr-2 h-5 w-5" />
-                Falar com Caio Oliveira no WhatsApp
+                Agendar Diagnóstico Técnico
               </Button>
             </a>
 
@@ -320,7 +299,7 @@ export default function Home() {
                 href={linkedinLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                className="p-3 rounded-full bg-card border border-primary/20 hover:border-primary hover:bg-primary/10 transition-colors"
               >
                 <Linkedin className="h-6 w-6 text-primary" />
               </a>
@@ -328,7 +307,7 @@ export default function Home() {
                 href={githubLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                className="p-3 rounded-full bg-card border border-primary/20 hover:border-primary hover:bg-primary/10 transition-colors"
               >
                 <Github className="h-6 w-6 text-primary" />
               </a>
@@ -336,7 +315,7 @@ export default function Home() {
                 href={whatsappLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 rounded-full bg-card border border-border hover:border-primary hover:bg-primary/10 transition-colors"
+                className="p-3 rounded-full bg-card border border-primary/20 hover:border-primary hover:bg-primary/10 transition-colors"
               >
                 <MessageCircle className="h-6 w-6 text-primary" />
               </a>
@@ -346,13 +325,13 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-secondary text-secondary-foreground py-8">
+      <footer className="bg-secondary text-secondary-foreground py-12 border-t border-border">
         <div className="container">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-bold text-lg mb-4">Caio Oliveira</h3>
               <p className="text-sm text-secondary-foreground/80">
-                Especialista em Automação de Vendas e CRM Kommo
+                Engenheiro de Soluções de CRM & Business Intelligence
               </p>
             </div>
             <div>
@@ -378,12 +357,13 @@ export default function Home() {
             </div>
             <div>
               <h4 className="font-semibold mb-4">Localização</h4>
-              <p className="text-sm">Maranguape, CE</p>
+              <p className="text-sm">Maranguape/Fortaleza, CE</p>
+              <p className="text-sm text-secondary-foreground/80">Atuação Remota</p>
             </div>
           </div>
 
           <div className="border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/80">
-            <p>© 2026 Caio Oliveira. Todos os direitos reservados.</p>
+            <p>© 2026 Caio Oliveira - Soluções em CRM & Business Intelligence</p>
           </div>
         </div>
       </footer>

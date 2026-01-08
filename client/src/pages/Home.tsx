@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Github, Linkedin, MessageCircle, Code2, Database, Zap } from "lucide-react";
+import { Github, Linkedin, MessageCircle, Code2, Database, Zap, Brain } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -30,8 +30,8 @@ export default function Home() {
             <a href="#hero" className="hover:text-primary transition-colors text-sm">
               Início
             </a>
-            <a href="#philosophy" className="hover:text-primary transition-colors text-sm">
-              Filosofia
+            <a href="#about" className="hover:text-primary transition-colors text-sm">
+              Sobre
             </a>
             <a href="#stack" className="hover:text-primary transition-colors text-sm">
               Stack
@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - CORRIGIDO PARA MOBILE */}
       <section
         id="hero"
         className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden"
@@ -59,16 +59,18 @@ export default function Home() {
           <div className="absolute bottom-20 left-20 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
         </div>
 
-        <div className="container relative z-10 grid md:grid-cols-2 gap-12 items-center">
-          <div className="animate-slide-in-up">
+        {/* Layout responsivo: column-reverse no mobile, grid no desktop */}
+        <div className="container relative z-10 flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
+          {/* Texto */}
+          <div className="animate-slide-in-up order-2 md:order-1">
             <div className="mb-6 inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary text-sm font-mono">Engenheiro de Soluções</span>
             </div>
-            <h1 className="text-6xl md:text-7xl font-bold leading-tight mb-6">
-              Engenharia de <span className="text-primary">CRM</span> e Inteligência de Dados.
+            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+              Engenharia de <span className="text-primary">IA Agêntica</span> & Ecossistemas de CRM
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              Arquitetura de ecossistemas de vendas escaláveis via código. Transformo processos manuais em automações auditáveis, integrando CRMs com APIs proprietárias.
+              Arquitetura de vendas autônoma. Unifico CRM, RAG e Agentes de IA para eliminar processos manuais e garantir integridade de dados.
             </p>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
               <Button className="btn-primary">
@@ -78,38 +80,37 @@ export default function Home() {
             </a>
           </div>
 
-          <div className="animate-slide-in-down hidden md:flex justify-center">
-            <div className="relative">
+          {/* Imagem - AGORA VISÍVEL NO MOBILE */}
+          <div className="animate-slide-in-down order-1 md:order-2 w-full flex justify-center min-h-[300px] md:min-h-auto">
+            <div className="relative w-full max-w-md">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-2xl opacity-20"></div>
               <img
                 src="/IMG_7301(1).jpg"
                 alt="Caio Oliveira"
-                className="relative rounded-2xl shadow-2xl max-w-md w-full object-cover border border-primary/20"
+                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border border-primary/20"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy Section */}
-      <section id="philosophy" className="py-20 bg-secondary/10 border-y border-border">
+      {/* About Section */}
+      <section id="about" className="py-20 bg-secondary/10 border-y border-border">
         <div className="container">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-4xl font-bold mb-6">
-              <span className="text-primary">Liberdade Cognitiva</span> através da Automação.
-            </h2>
+            <h2 className="text-4xl font-bold mb-6">O Engenheiro por trás do Código</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Sou Caio Oliveira, especialista em automação e estudante de Análise e Desenvolvimento de Sistemas. Minha filosofia é que a tecnologia deve servir para liberar o potencial humano.
+              Sou Caio Oliveira, Engenheiro de Soluções especializado em automação complexa. Atuo na intersecção entre Engenharia de Software e Estratégia Comercial.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-              Desenvolvo middlewares e scripts personalizados (Google Apps Script/Python) que eliminam o "trabalho robótico" de equipes comerciais. Atuo na intersecção entre Vendas, Lógica de Programação e Business Intelligence, garantindo integridade de dados para tomada de decisão estratégica.
+              Não apenas configuro ferramentas; eu construo middlewares, APIs proprietárias e arquiteturas multi-agente (n8n/LangChain) que permitem que empresas escalem sem aumentar o headcount. Meu foco é técnico: auditoria de dados, tratamento de concorrência e inteligência artificial aplicada a vendas.
             </p>
 
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Code2, label: "Código", desc: "Python, GAS, JavaScript" },
+                { icon: Brain, label: "IA Agêntica", desc: "LangChain, n8n, RAG" },
                 { icon: Database, label: "Dados", desc: "Integridade & Auditoria" },
-                { icon: Zap, label: "Automação", desc: "Escalável & Segura" },
               ].map((item, idx) => (
                 <Card key={idx} className="p-6 border border-primary/20 bg-primary/5">
                   <item.icon className="h-8 w-8 text-primary mb-3" />
@@ -127,32 +128,36 @@ export default function Home() {
         <div className="container">
           <h2 className="text-4xl font-bold text-center mb-12">Stack Tecnológico</h2>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
               {
-                title: "Linguagens",
-                items: ["Python", "JavaScript (ES6+)", "Google Apps Script", "SQL"],
+                title: "AI & Data Engineering",
+                items: ["LangChain", "Supabase (Vector)", "OpenAI API", "Pinecone", "RAG"],
               },
               {
-                title: "Infraestrutura & Low-Code",
-                items: ["Make (Integromat)", "n8n", "Webhooks", "APIs REST"],
+                title: "Backend & Scripting",
+                items: ["Python", "JavaScript (ES6+)", "Google Apps Script", "SQL (Postgres)"],
               },
               {
-                title: "Dados & BI",
-                items: ["Looker Studio", "JSON Parsing", "Data Warehousing", "Sheets"],
+                title: "Automation & IPaaS",
+                items: ["n8n (Advanced)", "Make", "Webhooks", "APIs REST"],
+              },
+              {
+                title: "BI & Analytics",
+                items: ["Looker Studio", "BigQuery", "Data Warehouse", "JSON Parsing"],
               },
             ].map((category, idx) => (
               <Card
                 key={idx}
-                className="p-8 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
+                className="p-6 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
-                <h3 className="text-xl font-bold mb-6 text-primary">{category.title}</h3>
-                <ul className="space-y-3">
+                <h3 className="text-lg font-bold mb-4 text-primary">{category.title}</h3>
+                <ul className="space-y-2">
                   {category.items.map((item, i) => (
-                    <li key={i} className="flex items-center gap-3 text-muted-foreground">
+                    <li key={i} className="flex items-center gap-2 text-muted-foreground text-sm">
                       <span className="text-accent">▸</span>
-                      <span className="font-mono text-sm">{item}</span>
+                      <span className="font-mono">{item}</span>
                     </li>
                   ))}
                 </ul>
@@ -167,52 +172,71 @@ export default function Home() {
         <div className="container">
           <h2 className="text-4xl font-bold text-center mb-4">Soluções de Engenharia</h2>
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-            Casos reais de automação complexa que transformaram operações comerciais.
+            Arquiteturas complexas que transformaram operações comerciais.
           </p>
 
           <div className="space-y-8 max-w-4xl mx-auto">
+            {/* NOVO - DESTAQUE: Multi-Agente com RAG */}
+            <Card className="p-8 border-2 border-primary/50 hover:border-primary transition-colors animate-slide-in-up bg-primary/5">
+              <div className="flex items-start justify-between mb-6">
+                <div>
+                  <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono mb-3">
+                    DESTAQUE
+                  </div>
+                  <h3 className="text-2xl font-bold text-primary">Ecossistema Multi-Agente com RAG</h3>
+                </div>
+                <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full font-mono whitespace-nowrap ml-4">
+                  n8n, OpenAI, Supabase
+                </span>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
+                    O Desafio
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    Atendimento manual consumia 40% do tempo da equipe. Sem capacidade de consultar estoque ou status de pedidos em tempo real.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
+                    A Engenharia
+                  </h4>
+                  <p className="text-muted-foreground text-sm">
+                    Arquitetura de "Difusor de Atendimento" com roteador semântico. Agentes especializados (Vendas, Suporte, Tracking) com memória de longo prazo via Postgres e RAG para consultas em PDFs internos, eliminando alucinações.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 pt-6 border-t border-primary/20">
+                <p className="text-sm text-accent font-mono">
+                  <strong>Impacto:</strong> Atendimento 100% autônomo com capacidade de consulta de estoque e status de pedidos em tempo real.
+                </p>
+              </div>
+            </Card>
+
+            {/* Outros Cases */}
             {[
               {
-                title: "Orquestrador de Agendas Inteligente",
+                title: "Orquestrador de Agendas & Auditoria",
                 tech: "Google Apps Script",
-                problem:
-                  "Falta de sincronia entre status do CRM e agenda gerava 'no-show' e conflitos de horário.",
+                problem: "Múltiplos vendedores agendavam o mesmo slot, gerando conflitos financeiros.",
                 solution:
-                  "Sistema backend que escuta webhooks, trata fusos horários (UTC-3) e renderiza eventos no Google Calendar com cores dinâmicas baseadas nas Tags do lead (ex: VIP = Dourado, Frio = Azul), permitindo gestão visual imediata.",
+                  "Sistema backend com algoritmos de fila (Mutex) para impedir duplicidade. Valida timestamps e IDs antes da gravação, garantindo integridade financeira e operacional.",
               },
               {
                 title: "Gerador de Propostas Server-Side",
-                tech: "Document Automation",
+                tech: "Python & API REST",
                 problem: "Vendedores perdiam 20min calculando impostos e formatando PDFs.",
                 solution:
-                  "Automação via API que intercepta o lead, extrai variáveis complexas (dimensões, material), executa cálculo financeiro via script e renderiza um contrato em PDF instantaneamente. Link injetado no CRM em < 3 segundos.",
-              },
-              {
-                title: "Auditoria Financeira com Trava de Concorrência",
-                tech: "LockService & Mutex",
-                problem: "Cliques simultâneos de vendedores geravam duplicidade no financeiro.",
-                solution:
-                  "Algoritmo de fila utilizando LockService (Mutex). O sistema valida timestamps e IDs antes da gravação, impedindo duplicidade na raiz e garantindo integridade do BI.",
-              },
-              {
-                title: "Bot SDR com Processamento de Linguagem Natural",
-                tech: "NLP Básico",
-                problem: "Triagem manual de agendamentos no WhatsApp consumia tempo de vendedores.",
-                solution:
-                  "Robô que monitora o chat (Incoming messages). Utilizando String Matching, detecta intenção do cliente (ex: 'agendado', 'confirmar') e move o card automaticamente para a etapa correta do funil.",
-              },
-              {
-                title: "Business Intelligence & Detecção de Gargalos",
-                tech: "Data Warehouse",
-                problem: "Gestão sem visibilidade dos motivos de perda de leads.",
-                solution:
-                  "Data Warehouse em nuvem alimentado em tempo real. Dashboard no Looker Studio visualizando 'Aging' (tempo de estagnação) e taxas de conversão reais por vendedor.",
+                  "Automação que intercepta leads na etapa de negociação, calcula impostos e variáveis complexas no servidor e devolve um contrato jurídico pronto em PDF em menos de 3 segundos.",
               },
             ].map((project, idx) => (
               <Card
                 key={idx}
                 className="p-8 border border-primary/20 hover:border-primary/50 transition-colors animate-slide-in-up"
-                style={{ animationDelay: `${idx * 0.1}s` }}
+                style={{ animationDelay: `${(idx + 1) * 0.1}s` }}
               >
                 <div className="flex items-start justify-between mb-4">
                   <h3 className="text-2xl font-bold text-primary flex-1">{project.title}</h3>
@@ -250,19 +274,19 @@ export default function Home() {
             {[
               {
                 title: "Arquitetura de CRM Multi-Plataforma",
-                desc: "Design de sistemas integrados que conectam CRMs, ERPs e plataformas de marketing.",
+                desc: "Design de sistemas integrados que conectam CRMs, ERPs e plataformas de marketing com APIs proprietárias.",
+              },
+              {
+                title: "Agentes de IA & Automação Inteligente",
+                desc: "Desenvolvimento de multi-agentes (LangChain/n8n) com RAG para atendimento autônomo e decisões baseadas em contexto.",
               },
               {
                 title: "Sanitização e Migração de Bases",
-                desc: "Deduplicação via script, normalização de dados e migração segura entre plataformas.",
+                desc: "Deduplicação via script, normalização de dados e migração segura entre plataformas com integridade garantida.",
               },
               {
-                title: "Integrações via API",
-                desc: "Conexões robustas entre ERP, CRM e Marketing com tratamento de erros e retry logic.",
-              },
-              {
-                title: "Dashboards de BI",
-                desc: "Visualizações em tempo real com previsibilidade de receita e detecção de gargalos.",
+                title: "Dashboards de BI & Previsibilidade",
+                desc: "Visualizações em tempo real com BigQuery e Looker Studio para detecção de gargalos e ROI.",
               },
             ].map((service, idx) => (
               <Card
@@ -284,7 +308,7 @@ export default function Home() {
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-4">Pronto para transformar sua operação?</h2>
             <p className="text-lg text-muted-foreground mb-8">
-              Vamos conversar sobre sua arquitetura de vendas e como código pode liberar seu potencial.
+              Vamos conversar sobre sua arquitetura de vendas e como IA agêntica pode liberar seu potencial.
             </p>
 
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
@@ -331,7 +355,7 @@ export default function Home() {
             <div>
               <h3 className="font-bold text-lg mb-4">Caio Oliveira</h3>
               <p className="text-sm text-secondary-foreground/80">
-                Engenheiro de Soluções de CRM & Business Intelligence
+                Engenheiro de Soluções de IA Agêntica & CRM
               </p>
             </div>
             <div>
@@ -363,7 +387,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-secondary-foreground/20 pt-8 text-center text-sm text-secondary-foreground/80">
-            <p>© 2026 Caio Oliveira - Soluções em CRM & Business Intelligence</p>
+            <p>© 2026 Caio Oliveira - Engenharia de IA & CRM</p>
           </div>
         </div>
       </footer>

@@ -60,9 +60,9 @@ export default function Home() {
         </div>
 
         {/* Layout responsivo: column-reverse no mobile, grid no desktop */}
-        <div className="container relative z-10 flex flex-col md:grid md:grid-cols-2 gap-12 items-center">
+        <div className="container relative z-10 flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Texto */}
-          <div className="animate-slide-in-up order-2 md:order-1">
+          <div className="animate-slide-in-up order-2 md:order-1 py-8 md:py-0">
             <div className="mb-6 inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary text-sm font-mono">Engenheiro de Soluções</span>
             </div>
@@ -81,13 +81,13 @@ export default function Home() {
           </div>
 
           {/* Imagem - AGORA VISÍVEL NO MOBILE */}
-          <div className="animate-slide-in-down order-1 md:order-2 w-full flex justify-center min-h-[300px] md:min-h-auto">
-            <div className="relative w-full max-w-md">
+          <div className="animate-slide-in-down order-1 md:order-2 w-full flex justify-center" style={{minHeight: '350px'}}>
+            <div className="relative w-full max-w-md h-full flex items-center justify-center">
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-2xl opacity-20"></div>
               <img
                 src="/IMG_7301(1).jpg"
                 alt="Caio Oliveira"
-                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border border-primary/20"
+                className="relative rounded-2xl shadow-2xl w-full h-full object-cover border border-primary/20"
               />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function Home() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl font-bold mb-6">O Engenheiro por trás do Código</h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Sou Caio Oliveira, Engenheiro de Soluções especializado em automação complexa. Atuo na intersecção entre Engenharia de Software e Estratégia Comercial.
+              Sou Caio Oliveira, Engenheiro de Soluções especializado em automação complexa. Atuo na convergência entre Engenharia de Software e Estratégia Comercial.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               Não apenas configuro ferramentas; eu construo middlewares, APIs proprietárias e arquiteturas multi-agente (n8n/LangChain) que permitem que empresas escalem sem aumentar o headcount. Meu foco é técnico: auditoria de dados, tratamento de concorrência e inteligência artificial aplicada a vendas.
@@ -132,15 +132,15 @@ export default function Home() {
             {[
               {
                 title: "AI & Data Engineering",
-                items: ["LangChain", "Supabase (Vector)", "OpenAI API", "Pinecone", "RAG"],
+                items: ["LangChain", "OpenAI Vision", "Supabase (Vector)", "OpenAI API", "Pinecone", "RAG"],
               },
               {
-                title: "Backend & Scripting",
-                items: ["Python", "JavaScript (ES6+)", "Google Apps Script", "SQL (Postgres)"],
+                title: "Database & CRM",
+                items: ["Airtable (Automations)", "PostgreSQL", "SQL", "Redis"],
               },
               {
-                title: "Automation & IPaaS",
-                items: ["n8n (Advanced)", "Make", "Webhooks", "APIs REST"],
+                title: "Backend & Integration",
+                items: ["Python", "Google Apps Script", "n8n (Advanced)", "Webhooks"],
               },
               {
                 title: "BI & Analytics",
@@ -183,10 +183,10 @@ export default function Home() {
                   <div className="inline-block px-3 py-1 bg-primary/20 text-primary text-xs rounded-full font-mono mb-3">
                     DESTAQUE
                   </div>
-                  <h3 className="text-2xl font-bold text-primary">Ecossistema Multi-Agente com RAG</h3>
+                  <h3 className="text-2xl font-bold text-primary">Ecossistema Imobiliário Multi-Modal & Buffer de Latência</h3>
                 </div>
                 <span className="px-3 py-1 bg-accent/10 text-accent text-xs rounded-full font-mono whitespace-nowrap ml-4">
-                  n8n, OpenAI, Supabase
+                  n8n • Redis • OpenAI Vision
                 </span>
               </div>
 
@@ -196,7 +196,7 @@ export default function Home() {
                     O Desafio
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    Atendimento manual consumia 40% do tempo da equipe. Sem capacidade de consultar estoque ou status de pedidos em tempo real.
+                    Fragmentação de mensagens no WhatsApp ("mensagem pipoca") prejudicava a compreensão do contexto. Sem capacidade de analisar fotos de propriedades ou sincronizar dados imobiliários em tempo real.
                   </p>
                 </div>
                 <div>
@@ -204,14 +204,17 @@ export default function Home() {
                     A Engenharia
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    Arquitetura de "Difusor de Atendimento" com roteador semântico. Agentes especializados (Vendas, Suporte, Tracking) com memória de longo prazo via Postgres e RAG para consultas em PDFs internos, eliminando alucinações.
+                    <strong>Buffer de Latência (Redis):</strong> Agrupa mensagens sequenciais para processamento contextual. <strong>Multi-Modalidade:</strong> Transcrição de áudio + Visão Computacional para análise de fotos. <strong>CRM Headless:</strong> Sincronização em tempo real com Airtable e agendamento automático via Google Calendar API.
                   </p>
                 </div>
               </div>
 
               <div className="mt-6 pt-6 border-t border-primary/20">
-                <p className="text-sm text-accent font-mono">
-                  <strong>Impacto:</strong> Atendimento 100% autônomo com capacidade de consulta de estoque e status de pedidos em tempo real.
+                <p className="text-sm text-accent font-mono mb-3">
+                  <strong>Impacto:</strong> Qualificação automática (SPIN Selling), recomendação visual de propriedades e gestão de agenda sem intervenção humana.
+                </p>
+                <p className="text-xs text-muted-foreground font-mono">
+                  Stack: n8n • Redis • OpenAI Vision • Airtable (CRM/DB) • Google Calendar • PostgreSQL
                 </p>
               </div>
             </Card>

@@ -66,7 +66,7 @@ export default function Home() {
             <div className="mb-6 inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full">
               <span className="text-primary text-sm font-mono">Engenheiro de Soluções</span>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold leading-relaxed mb-6">
               Engenharia de <span className="text-primary">IA Agêntica</span> & Ecossistemas de CRM
             </h1>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg">
@@ -81,13 +81,13 @@ export default function Home() {
           </div>
 
           {/* Imagem - AGORA VISÍVEL NO MOBILE */}
-          <div className="animate-slide-in-down order-1 md:order-2 w-full flex justify-center" style={{minHeight: '350px'}}>
-            <div className="relative w-full max-w-md h-full flex items-center justify-center">
+          <div className="animate-slide-in-down order-1 md:order-2 w-full flex justify-center">
+            <div className="relative w-full max-w-md" style={{maxHeight: '500px'}}>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-2xl opacity-20"></div>
               <img
                 src="/IMG_7301(1).jpg"
                 alt="Caio Oliveira"
-                className="relative rounded-2xl shadow-2xl w-full h-full object-cover border border-primary/20"
+                className="relative rounded-2xl shadow-2xl w-full h-auto object-contain border border-primary/20"
               />
             </div>
           </div>
@@ -136,7 +136,7 @@ export default function Home() {
               },
               {
                 title: "Database & CRM",
-                items: ["Airtable (Automations)", "PostgreSQL", "SQL", "Redis"],
+                items: ["Airtable (Database & Automation)", "PostgreSQL", "SQL", "Redis"],
               },
               {
                 title: "Backend & Integration",
@@ -190,6 +190,15 @@ export default function Home() {
                 </span>
               </div>
 
+              {/* Imagem do Workflow n8n */}
+              <div className="mb-6 rounded-lg overflow-hidden border border-primary/20">
+                <img
+                  src="/n8n-workflow.png"
+                  alt="Fluxo n8n - Ecossistema Imobiliário"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
                   <h4 className="font-semibold text-foreground mb-2 text-sm uppercase tracking-wide">
@@ -204,7 +213,7 @@ export default function Home() {
                     A Engenharia
                   </h4>
                   <p className="text-muted-foreground text-sm">
-                    <strong>Buffer de Latência (Redis):</strong> Agrupa mensagens sequenciais para processamento contextual. <strong>Multi-Modalidade:</strong> Transcrição de áudio + Visão Computacional para análise de fotos. <strong>CRM Headless:</strong> Sincronização em tempo real com Airtable e agendamento automático via Google Calendar API.
+                    <strong>Buffer de Latência (Redis):</strong> Agrupa mensagens sequenciais para processamento contextual. <strong>Multi-Modalidade:</strong> Transcrição de áudio + Visão Computacional para análise de fotos. <strong>CRM Headless:</strong> Integração total com Airtable como CRM e Google Calendar para agendamento automático.
                   </p>
                 </div>
               </div>

@@ -123,9 +123,9 @@ export default function Home() {
                 <div className="flex justify-center md:justify-start">
                   <div className="relative w-full max-w-xs rounded-lg overflow-hidden border border-primary/20">
                     <img
-                      src="/IMG_7301(1).jpg"
-                      alt="Caio - Kommo Partner"
-                      className="w-full h-auto object-cover grayscale hover:grayscale-0 transition-all"
+                      src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663053457614/oVZAIPnlnZAEJtnf.heic"
+                      alt="Caio - Kommo Partner Certified"
+                      className="w-full h-auto object-cover"
                     />
                   </div>
                 </div>

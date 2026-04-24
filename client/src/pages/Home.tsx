@@ -42,9 +42,9 @@ export default function Home() {
             <div className="relative w-full max-w-md" style={{ maxHeight: "500px" }}>
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-2xl blur-2xl opacity-20"></div>
               <img
-                src="/IMG_7301(1).jpg"
+                src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663053457614/ofNEryjeRojTUXkD.HEIC?format=jpg"
                 alt="Caio Oliveira"
-                className="relative rounded-2xl shadow-2xl w-full h-auto object-contain border border-primary/20"
+                className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border border-primary/20"
               />
             </div>
           </div>

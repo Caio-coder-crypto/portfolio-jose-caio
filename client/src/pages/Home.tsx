@@ -121,7 +121,7 @@ export default function Home() {
               <div>
                 <h3 className="text-xl font-semibold mb-2 text-primary">A Solução</h3>
                 <p className="text-muted-foreground">
-                  DataHub conecta as três plataformas e responde tudo em tempo real. Mostra ROI por canal, CAC, ROAS, funil de vendas, ranking de vendedores, custo do WhatsApp, e muito mais.
+                  DataHub conecta as três plataformas em um único dashboard. Mostra receita no período, pipeline em aberto, negócios fechados, taxa de conversão, ticket médio, tempo médio de fechamento, CAC WhatsApp, ROAS por canal, ranking de vendedores, e muito mais — tudo em tempo real.
                 </p>
               </div>
 
@@ -130,7 +130,7 @@ export default function Home() {
                 <ul className="space-y-2 text-muted-foreground">
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
-                    <span>Clientes entendem exatamente onde está o dinheiro</span>
+                    <span>Clientes entendem exatamente onde está o dinheiro (receita por canal, origem de leads)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
@@ -138,11 +138,15 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
-                    <span>Decisões de marketing baseadas em dados reais</span>
+                    <span>Decisões de marketing baseadas em dados reais (ROAS, CAC, ROI por canal)</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-primary mt-1">✓</span>
-                    <span>100M+ dados processados por mês</span>
+                    <span>100M+ dados processados por mês com latência mínima</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary mt-1">→</span>
+                    <a href="https://datahub-delta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Acessar DataHub agora</a>
                   </li>
                 </ul>
               </div>
@@ -184,7 +188,7 @@ export default function Home() {
           {/* Métricas do DataHub */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
             <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">5</p>
+              <p className="text-2xl font-bold text-primary mb-2">5+</p>
               <p className="text-sm text-muted-foreground">Integrações</p>
             </div>
             <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 text-center">
@@ -192,12 +196,12 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">Dados/mês</p>
             </div>
             <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">60%</p>
-              <p className="text-sm text-muted-foreground">Redução de tempo</p>
+              <p className="text-2xl font-bold text-primary mb-2">15+</p>
+              <p className="text-sm text-muted-foreground">Métricas em tempo real</p>
             </div>
             <div className="bg-primary/5 border border-primary/10 rounded-lg p-6 text-center">
-              <p className="text-2xl font-bold text-primary mb-2">3x</p>
-              <p className="text-sm text-muted-foreground">ROI médio</p>
+              <p className="text-2xl font-bold text-primary mb-2">1s</p>
+              <p className="text-sm text-muted-foreground">Latência média</p>
             </div>
           </div>
 
@@ -206,8 +210,8 @@ export default function Home() {
             <div className="flex gap-4">
               <BarChart3 className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold mb-1">Dashboards em Tempo Real</h4>
-                <p className="text-sm text-muted-foreground">KPIs, gráficos e tabelas que atualizam automaticamente</p>
+                <h4 className="font-semibold mb-1">Visão Geral (Dashboard Principal)</h4>
+                <p className="text-sm text-muted-foreground">Receita no período, pipeline, negócios fechados, taxa de conversão em um único lugar</p>
               </div>
             </div>
 
@@ -215,23 +219,23 @@ export default function Home() {
               <TrendingUp className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
                 <h4 className="font-semibold mb-1">ROI por Canal</h4>
-                <p className="text-sm text-muted-foreground">Entenda qual canal gera mais receita e lucro</p>
+                <p className="text-sm text-muted-foreground">Origem dos Leads, Funil de Vendas, Gastos & ROI — entenda qual canal dá lucro</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Users className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold mb-1">Ranking de Vendedores</h4>
-                <p className="text-sm text-muted-foreground">Comissões automáticas e análise de performance</p>
+                <h4 className="font-semibold mb-1">Performance da Equipe</h4>
+                <p className="text-sm text-muted-foreground">Ranking de vendedores, produtividade, atendimento e comissões automáticas</p>
               </div>
             </div>
 
             <div className="flex gap-4">
               <Smartphone className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
               <div>
-                <h4 className="font-semibold mb-1">Custo do WhatsApp</h4>
-                <p className="text-sm text-muted-foreground">Rastreie gastos com WhatsApp Business API em tempo real</p>
+                <h4 className="font-semibold mb-1">WhatsApp & Conversas</h4>
+                <p className="text-sm text-muted-foreground">CAC WhatsApp, ROAS WhatsApp, histórico de conversas e simulador de receita</p>
               </div>
             </div>
           </div>

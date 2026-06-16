@@ -33,13 +33,13 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Button size="lg" className="bg-primary hover:bg-primary/90">
-                  Conversar sobre seu projeto
-                  <ArrowRight className="ml-2 w-4 h-4" />
-                </Button>
-                <Button size="lg" variant="outline">
-                  Ver case de sucesso
-                </Button>
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => window.open('https://api.whatsapp.com/send/?phone=5585988842142&text=Olá!+Cheguei+aqui+através+do+seu+portfólio.&type=phone_number&app_absent=0', '_blank')}>
+                Conversar sobre seu projeto
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => document.getElementById('datahub-case')?.scrollIntoView({ behavior: 'smooth' })}>
+                Ver case de sucesso
+              </Button>
               </div>
 
               <div className="flex gap-8 pt-8 text-sm">
@@ -103,7 +103,7 @@ export default function Home() {
       </section>
 
       {/* CASE PRINCIPAL: DATAHUB */}
-      <section className="py-20 md:py-28 border-b border-primary/10">
+      <section id="datahub-case" className="py-20 md:py-28 border-b border-primary/10">
         <div className="container max-w-5xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">DataHub: Revenue Intelligence Platform</h2>
           <p className="text-muted-foreground mb-12 text-lg">Meu maior projeto. Uma plataforma que conecta CRM, WhatsApp e anúncios em um único dashboard.</p>
@@ -314,20 +314,29 @@ export default function Home() {
             Se você tem CRM, WhatsApp e anúncios, vamos conversar sobre como transformar esses dados em decisões de receita.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-primary hover:bg-primary/90">
-              Agendar conversa
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Button>
-            <Button size="lg" variant="outline">
-              Enviar mensagem no WhatsApp
-            </Button>
-          </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-primary hover:bg-primary/90" onClick={() => window.open('https://api.whatsapp.com/send/?phone=5585988842142&text=Olá!+Cheguei+aqui+através+do+seu+portfólio.&type=phone_number&app_absent=0', '_blank')}>
+                Conversar no WhatsApp
+                <ArrowRight className="ml-2 w-4 h-4" />
+              </Button>
+              <Button size="lg" variant="outline" onClick={() => window.open('mailto:josecaiocaio746@gmail.com')}>
+                Enviar Email
+              </Button>
+            </div>
 
-          <div className="mt-12 pt-12 border-t border-primary/10">
-            <p className="text-sm text-muted-foreground">
-              📧 caio@example.com • 💬 WhatsApp • 🔗 LinkedIn
-            </p>
+          <div className="mt-12 pt-12 border-t border-primary/10 flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <a href="https://api.whatsapp.com/send/?phone=5585988842142&text=Olá!+Cheguei+aqui+através+do+seu+portfólio.&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition">
+              💬 WhatsApp: +55 85 98884-2142
+            </a>
+            <a href="mailto:josecaiocaio746@gmail.com" className="text-sm text-muted-foreground hover:text-primary transition">
+              📧 josecaiocaio746@gmail.com
+            </a>
+            <a href="https://www.linkedin.com/in/caio-oliveira-119992287/" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition">
+              🔗 LinkedIn
+            </a>
+            <a href="https://github.com/Caio-coder-crypto" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground hover:text-primary transition">
+              💻 GitHub
+            </a>
           </div>
         </div>
       </section>

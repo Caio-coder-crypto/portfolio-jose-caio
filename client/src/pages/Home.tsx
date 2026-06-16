@@ -144,11 +144,14 @@ export default function Home() {
                     <span className="text-primary mt-1">✓</span>
                     <span>100M+ dados processados por mês com latência mínima</span>
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-primary mt-1">→</span>
-                    <a href="https://datahub-delta.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-medium">Acessar DataHub agora</a>
-                  </li>
                 </ul>
+              </div>
+
+              <div className="pt-4">
+                <a href="https://datahub-delta.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-primary/50 transition-all duration-300 transform hover:scale-105">
+                  🚀 Acessar DataHub Agora
+                  <ArrowRight className="w-5 h-5" />
+                </a>
               </div>
             </div>
 
@@ -237,6 +240,74 @@ export default function Home() {
                 <h4 className="font-semibold mb-1">WhatsApp & Conversas</h4>
                 <p className="text-sm text-muted-foreground">CAC WhatsApp, ROAS WhatsApp, histórico de conversas e simulador de receita</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* IMPLANTAÇÕES DE CRM */}
+      <section className="py-20 md:py-28 border-b border-primary/10 bg-primary/5">
+        <div className="container max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Implantações de CRM</h2>
+          <p className="text-lg text-muted-foreground mb-12">Meu foco principal. Para ter BI de CRM, você precisa rodar e implantar um CRM primeiro. Eu faço isso.</p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="bg-background border border-primary/20 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+                <Zap className="w-5 h-5" />
+                Implementação Completa
+              </h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Configuração do CRM (DataCrazy, Airtable, etc)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Estrutura de campos e pipelines de vendas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Integração com WhatsApp Business</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Automações de fluxo (n8n, GAS)</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">✓</span>
+                  <span>Sincronização com anúncios (Meta, Google)</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-background border border-primary/20 rounded-lg p-6">
+              <h3 className="text-xl font-semibold mb-4 text-primary flex items-center gap-2">
+                <BarChart3 className="w-5 h-5" />
+                Depois: BI de CRM
+              </h3>
+              <ul className="space-y-3 text-muted-foreground">
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">→</span>
+                  <span>Com CRM rodando, implemento o DataHub</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">→</span>
+                  <span>Dashboard em tempo real com ROI por canal</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">→</span>
+                  <span>Visibilidade completa do funil de vendas</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">→</span>
+                  <span>Decisões baseadas em dados reais</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-primary mt-1">→</span>
+                  <span>Escalabilidade e crescimento previsível</span>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
